@@ -18,6 +18,14 @@
             $formErrors[] = 'Message Can\'t Be Less Than <strong>10</strong> Characters'; 
         }
         
+         // Use Google reCAPTCHA
+	$secret   = '6Lf1hw0UAAAAAD_uaZzu32q4EF44CSTBqwU7ILGy';
+	$response =$_POST['g-recaptcha-response'];
+	$remoteip   =$_SERVER['REMOTE_ADDR'];
+
+	$url  = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
+	$rusult = json_decode($url, TRUE);
+	if($rusult['success'] == 1){
         // If No Errors Send The Email [ mail(To, Subject, Message, Headers, Parameters) ]
         
         $headers = 'From: ' . $mail . '\r\n';
@@ -36,7 +44,7 @@
             $success = '<div class="alert alert-success">We Have Recieved Your Message</div>';
             
         }
-        
+    }
     }
 ?>
 
