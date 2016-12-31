@@ -121,6 +121,7 @@
                         Message Can\'t Be Less Than <strong>10</strong> Characters
                     </div>
                 </div>
+                 <div class="g-recaptcha" data-sitekey="6Lf1hw0UAAAAAPQBC6RTVNTUeeIrEddOMQjwih2Q"></div>
                 <input 
                        class="btn btn-success" 
                        type="submit" 
@@ -130,7 +131,7 @@
         </div>
         
         <!-- End Form -->
-        
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="js/jquery-1.12.4.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/custom.js"></script>
